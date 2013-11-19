@@ -1,0 +1,36 @@
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class="ie6" lang="en">
+/[if IE 7 ] <html class="ie7" lang="en">
+/[if IE 8 ] <html class="ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    / Uncomment to make IE8 render like IE7
+    / <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    / Set the viewport width to device width for mobile
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/custom.modernizr"
+    = csrf_meta_tags
+  %body
+    %nav.nav-collapse
+    %ul
+      %li#firstleft.nav-item
+        %a{href: "/about"} ABOUT
+      %li#left.nav-item
+        %a{href: "/chefs"} CHEFS
+      %li#left.nav-item
+        %a{href: "/services"} SERVICES
+      %li#left.nav-item
+        %a{href: "/portfolio"} PORTFOLIO
+      %li#right.nav-item.first
+        %a{href: "/contact"} CONTACT
+      %li#right.nav-item
+        %a{href: "/blog"} BLOG
+      %li#right.nav-item
+        %a{href: "/meal-plan"} CUSTOM MEAL PLAN
+    = yield
+    = javascript_include_tag "application"
