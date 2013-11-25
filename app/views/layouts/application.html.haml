@@ -16,21 +16,30 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
   %body
-    %nav.nav-collapse
-    %ul
-      %li#firstleft.nav-item
-        %a{href: "/about"} ABOUT
-      %li#left.nav-item
-        %a{href: "/chefs"} CHEFS
-      %li#left.nav-item
-        %a{href: "/services"} SERVICES
-      %li#left.nav-item
-        %a{href: "/portfolio"} PORTFOLIO
-      %li#right.nav-item.first
-        %a{href: "/contact"} CONTACT
-      %li#right.nav-item
-        %a{href: "/blog"} BLOG
-      %li#right.nav-item
-        %a{href: "/meal-plan"} CUSTOM MEAL PLAN
+    .sticky
+      %nav.top-bar{"data-topbar" => ""}
+        %ul.title-area
+          %li.name
+            %h1
+              %a{href: '/'}Collective Green SF
+        %section.top-bar-section
+          %ul.right
+            %li.active.has-dropdown
+              %a{href: "#"} OUR OFFERINGS
+              %ul.dropdown
+                %li
+                  %a{href: "/meal-plan"} CUSTOM MEALS  
+                %li
+                  %a{href: "/services"} OTHER SERVICES
+            %li.active
+              %a{href: "/portfolio"} PORTFOLIO
+            %li.active
+              %a{href: "/blog"} BLOG
+            %li.active
+              %a{href: "/about"} OUR PHILOSOPHY
+            %li.active
+              %a{href: "/chefs"} CHEFS
+          
+
     = yield
     = javascript_include_tag "application"
