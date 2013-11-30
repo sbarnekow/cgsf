@@ -42,4 +42,36 @@
           
 
     = yield
+    %section.footer
+      .row
+        .large-4.columns#pad
+          %span#twitter-icon
+            %img{alt: "twitter-icon", height: "32", src: "twitter_icon.png", width: "32"}
+          %span#facebook-icon
+            %img{alt: "facebook-icon", height: "32", src: "facebook_icon.png", width: "32"}
+          %span#insta-icon
+            %img{alt: "instagram-icon", height: "32", src: "instagram_icon.png", width: "32"}
+          %br
+          %h3
+            Collective Green SF
+            %br
+            8th and Brannan Street
+            %br
+            San Francisco, California
+          %br
+          %br
+          %p
+            © Collective Green 2013
+        .large-4.columns#lower#left-pad
+          %img#footer-plate{src: "footer_plate_icon.png"}
+          %h4
+            Lettuce Make Your Day!
+        .large-4.columns
+          %form#inquiry
+            %input.name{placeholder: "Name", type: "text"}/
+            %input.email{placeholder: "Email", type: "text"}/
+            %input.company-size{placeholder: "Company Size", type: "text"}/
+            %input.meals-per-week{placeholder: "Meals Per Week", type: "text"}/
+            %button#grubbing{type: "submit"} Get Grubbin'!
+
     = javascript_include_tag "application"
